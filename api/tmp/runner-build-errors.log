@@ -1,0 +1,3 @@
+api.go:9:2: cannot find package "github.com/hugominas/recipe-docker-go-rabitmq-mongodb/api/lib/database" in any of:
+	/usr/local/go/src/github.com/hugominas/recipe-docker-go-rabitmq-mongodb/api/lib/database (from $GOROOT)
+	/go/src/github.com/hugominas/recipe-docker-go-rabitmq-mongodb/api/lib/database (from $GOPATH)

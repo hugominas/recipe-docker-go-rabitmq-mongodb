@@ -1,4 +1,4 @@
-# GoMore Boilerplate
+# GoMoreRabinx Boilerplate
 GoMore (Golang, Docker, React, Mongodb, RabitMq, Nginx) boilerplate.
 Forked from https://github.com/McMenemy/GoDoRP
 
@@ -7,6 +7,8 @@ Forked from https://github.com/McMenemy/GoDoRP
 - [ ] React Redux Boilerplate
 - [x] Golang Mux API boilerplate
 - [x] Mongodb setup
+- [x] RabitMq
+- [x] Nginx config
 - [ ] CD/CI Jenkins integration
 
 ## Benifits

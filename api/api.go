@@ -4,8 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"github.com/hugominas/gomore/api/lib/database"
+
 	"github.com/gorilla/mux"
+	"github.com/hugominas/recipe-docker-go-rabitmq-mongodb/api/lib/database"
 )
 
 type Person struct {
@@ -50,7 +51,7 @@ func DeletePersonEndpoint(w http.ResponseWriter, req *http.Request) {
 	params := mux.Vars(req)
 	for index, item := range people {
 		if item.ID == params["id"] {
-			people = append(people[:index], people[index + 1:]...)
+			people = append(people[:index], people[index+1:]...)
 			break
 		}
 	}

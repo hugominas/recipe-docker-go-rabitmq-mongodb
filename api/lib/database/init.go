@@ -2,6 +2,7 @@ package database
 
 import (
 	"log"
+
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -11,8 +12,8 @@ type Person struct {
 	Phone string
 }
 
-func Init() (string){
-	session, err := mgo.Dial("apiuser:1234@mongodb/apiData")
+func Init() string {
+	session, err := mgo.Dial("webuser:1234@mongodb/website")
 	if err != nil {
 		panic(err)
 	}
@@ -21,7 +22,7 @@ func Init() (string){
 	// Optional. Switch the session to a monotonic behavior.
 	session.SetMode(mgo.Monotonic, true)
 
-	c := session.DB("apiData").C("people")
+	c := session.DB("website").C("people")
 	err = c.Insert(&Person{"Ale", "+55 53 8116 9639"},
 		&Person{"Cla", "+55 53 8402 8510"})
 	if err != nil {

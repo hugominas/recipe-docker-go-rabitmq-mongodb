@@ -4,6 +4,16 @@ networks:
     driver: bridge
 
 services:
+
+  nginx:
+    build: ./nginx/
+    links:
+      - api
+    networks:
+      - app-tier
+    ports:
+      - "8080:80"
+
   mongodb:
     build: ./db
     volumes:
@@ -27,7 +37,7 @@ services:
     volumes:
       - ./api:/go/src/github.com/hugominas/gomore/api
     ports:
-      - "5000:8080"
+      - "5000:5000"
     links:
       - mongodb
     networks:
