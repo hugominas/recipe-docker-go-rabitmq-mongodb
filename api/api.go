@@ -6,7 +6,6 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/hugominas/recipe-docker-go-rabitmq-mongodb/api/lib/database"
 )
 
 type Person struct {
@@ -60,8 +59,6 @@ func DeletePersonEndpoint(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
-	database.Init()
-
 	router := mux.NewRouter()
 	people = append(people, Person{ID: "1", Firstname: "Hugo", Lastname: "Rodrigues", Address: &Address{City: "Estoril", State: "Lisbon"}})
 	people = append(people, Person{ID: "2", Firstname: "Bianca", Lastname: "Moura"})
@@ -74,6 +71,6 @@ func main() {
 
 	router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("DELETE")
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":5000", router))
 
 }
